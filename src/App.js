@@ -1,16 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import "./App.css";
 
 function App() {
+  const [time, updateTime] = useState(new Date());
+  useEffect(() => {
+    // timer updation logic
+    const timer = setInterval(() => {
+      updateTime(new Date());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
   return (
-    <div style={{ textAlign: 'center' }}>
-      <header>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+    <div className="App">
+      <div className="elementcontainer">
+        <h1>Digital Clock</h1>
+        <div className="timeparent">
+          <div className="timecontainer">
+            {/* print the string prettily */}
+            <span className="time">{time.toLocaleTimeString()}</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
