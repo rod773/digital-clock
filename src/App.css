@@ -2,6 +2,7 @@ body {
   background-color: black;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .App {
@@ -9,6 +10,7 @@ body {
   color: white;
   height: 100vh;
   width: 100vw;
+  caret-color: transparent;
 }
 .timeparent {
   display: flex;
@@ -24,9 +26,10 @@ body {
   color: rgb(117, 249, 77);
 }
 .timecontainer {
+  margin: 0 auto;
   text-align: center;
   height: 175px;
-  width: 400px;
+  width: 80%;
   border: 10px solid rgb(117, 249, 77);
   border-radius: 20px;
 }
